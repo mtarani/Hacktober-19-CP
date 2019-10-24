@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+static int count=0;
+struct Node{
+    int data;
+    Node *left,*right;
+    Node(int data)
+    {
+        this->data=data;
+        left=right=NULL;
+    }
+};
+
+void Nthpostorder(Node *node,int n)
+{
+    if(node==NULL) return;
+
+    if(count<=n){
+        Nthpostorder(node->left,n);
+        Nthpostorder(node->right,n);
+        count++;
+        if(count==n) cout<<node->data;
+    }
+}
+
+int main()
+{
+    struct Node *root=new Node(11);
+    root->left=new Node(21);
+    root->right=new Node(31);
+    root->left->left= new Node(41);
+    root->left->right=new Node(51);
+    int n=4;
+    Nthpostorder(root,n);
+    return 0;
+}
