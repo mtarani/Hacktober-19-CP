@@ -1,0 +1,56 @@
+#include<stdio.h>
+int main()
+{
+    char ch[100000];
+    int n,i,c;
+    scanf("%s",ch);
+    scanf("%d",&n);
+    for( i=0;ch[i];i++)
+    {
+        if(ch[i]>=48&&ch[i]<=57)
+        {   if(n>10)
+            { c=n%10;
+                 if(ch[i]+c<=57)
+                  printf("%c",ch[i]+c);
+                 else if(ch[i]+c>57)
+                printf("%c",(47+((ch[i]+c)-57)));
+            }
+            else  if(ch[i]+n<=57)
+                  printf("%c",ch[i]+n);
+            else if(ch[i]+c>57)
+                printf("%c",(47+((ch[i]+n)-57)));
+            
+                
+        }
+        else if(ch[i]>=65&&ch[i]<=90)
+        {    if(n>26)
+             {
+                 c=n%26;
+                if(ch[i]+c<=90)
+                printf("%c",ch[i]+c);
+                else if(ch[i]+c>90)
+                printf("%c",(64+((ch[i]+c)-90)));
+             }
+             else  if(ch[i]+n<=90)
+                printf("%c",ch[i]+n);
+            else if(ch[i]+n>90)
+                printf("%c",(64+((ch[i]+n)-90)));
+        }
+        else if(ch[i]>=97&&ch[i]<=122)
+        {     if(n>26)
+            { c=n%26;
+                if(ch[i]+c<=122)
+                printf("%c",ch[i]+c);
+                else if(ch[i]+c>122)
+                printf("%c",(96+((ch[i]+c)-122)));
+            }
+            else if(ch[i]+n<=122)
+                printf("%c",ch[i]+n);
+            else if(ch[i]+n>122)
+                printf("%c",(96+((ch[i]+n)-122)));
+        }
+        else 
+        printf("%c",ch[i]);
+    }
+    return 0;
+}
