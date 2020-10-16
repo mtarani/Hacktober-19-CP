@@ -1,3 +1,5 @@
+//Deepak Rathore
+//IIITDM kurnool
 #include<bits/stdc++.h>
 using namespace std;
 int main()
